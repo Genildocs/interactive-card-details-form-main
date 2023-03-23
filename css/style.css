@@ -1,3 +1,58 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
 
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+}
+
+.footer {
+  grid-column: 3/-1;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-card {
+  grid-column: 1/3;
+  grid-row: 1/3;
+  background-image: url(../images/bg-main-desktop.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  color: white;
+}
+.section-card .card-one {
+  background-image: url(../images/bg-card-front.png);
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 25rem;
+}
+.section-card .card-two {
+  background-image: url(../images/bg-card-back.png);
+  color: black;
+  height: 25rem;
+  width: 100%;
+  background-repeat: no-repeat;
+}
+.form {
+  grid-column: 3/-1;
+  height: 90vh;
+}
 
 /*# sourceMappingURL=style.css.map */

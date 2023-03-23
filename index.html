@@ -11,68 +11,77 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
     <title>Frontend Mentor | Interactive card details form</title>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   </head>
-  <body>
-    <main>
-      <div class="content">      
-        <section class="section-card">          
-          <!-- USAR BACKGROUND IMAGE COM AS IMG DOS CARD NESSAS DIV E ALINHA-LAS NORMALMENTE COM MARGIN -->
-          <div class="card-img-one">
-            <img src="./images/card-logo.svg" alt="" />
-            <p>0000 0000 0000 0000</p>
-            <div class="card-img-data">
-              <p>Jane Appleseed</p>
-              <p>00/00</p>
-            </div>
-          </div>
-          <div class="card-img-two">
-            <p>000</p>
-          </div>
-        </section>
 
-        <div class="form">
-          <section class="section-form">
-            <form action="">
-              <label for="card-name">Cardholder Name</label>
-              <input
-                type="text"
-                placeholder="e.g. Jane Appleseed"
-                id="card-name"
-              />
-              <label for="card-number">Card Number</label>
-              <input
-                type="text"
-                placeholder="e.g. 1234 5678 9123 0000"
-                id="card-number"
-              />
-              <label for="card-month">Exp. Date (MM/YY)</label>
-              <input type="number" placeholder="MM" id="card-month" />
-              <input type="number" placeholder="YY" id="card-years" />
-              <label for="card-cvc">CVC</label>
-              <input type="text" placeholder="e.g. 123" id="card-cvc" />
-              <button>Confirm</button>
-            </form>
-          </section>
-          <section class="section-three">
-            <img src="./images/icon-complete.svg" alt="" />
-            <p><strong>Thank you!</strong></p>
-            <p>We've added your card details</p>
-            <button>Continue</button>
-          </section>
+  <body>
+    <div class="container">
+      <section class="section-card">
+        <!-- USAR BACKGROUND IMAGE COM AS IMG DOS CARD NESSAS DIV E ALINHA-LAS NORMALMENTE COM MARGIN -->
+        <div class="card-one">
+          <img src="./images/card-logo.svg" alt="" />
+          <p>0000 0000 0000 0000</p>
+          <div class="card-img-data">
+            <p>Jane Appleseed</p>
+            <p>00/00</p>
+          </div>
         </div>
+        <div class="card-two">
+          <img src="./images/bg-card-back.png" alt="card back" class="card-two__image">          
+          <p class="card-two__paragraph">000</p>
+        </div>
+      </section>
+
+      <div class="form">
+        <section class="section-form">
+          <form action="">
+            <label for="card-name" class="section-from__label-name">Cardholder Name</label>
+            <input
+              type="text"
+              placeholder="e.g. Jane Appleseed"
+              id="card-name"
+              class="section-form__input-name"
+            />
+            <label for="card-number" class="section-form__label-number">Card Number</label>
+            <input
+              type="text"
+              placeholder="e.g. 1234 5678 9123 0000"
+              id="card-number"
+              class="section-form__input-number"
+            />
+            <label for="card-month" class="section-form__label-month">Exp. Date (MM/YY)</label>
+            <input type="number" placeholder="MM" id="card-month" class="section-form__input-month"/>
+            <input type="number" placeholder="YY" id="card-years" class="section-form__input-years"/>
+            <label for="card-cvc" class="section-form__label-cvc">CVC</label>
+            <input type="text" placeholder="e.g. 123" id="card-cvc" class="section-form__input-cvc"/>
+            <button class="btn">Confirm</button>
+          </form>
+        </section>
+        <section class="section-three">
+          <img src="./images/icon-complete.svg" alt="" />
+          <p><strong>Thank you!</strong></p>
+          <p>We've added your card details</p>
+          <button>Continue</button>
+        </section>
       </div>
 
       <!-- Completed state start -->
-    </main>
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
+
+      <footer class="footer">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Genildocs</a>.
+      </footer>
     </div>
   </body>
 </html>
