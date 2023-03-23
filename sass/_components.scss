@@ -1,0 +1,34 @@
+.section-card {
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+  background-image: url(../images/bg-main-desktop.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  color: white;
+  
+
+  .card-one {
+    background-image: url(../images/bg-card-front.png);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 25rem;
+    
+  }
+
+  .card-two {
+    background-image: url(../images/bg-card-back.png);
+    color: black;
+    height: 25rem;
+    width: 100%;
+    background-repeat: no-repeat;   
+    
+    &__paragraph {
+    }
+  }
+}
+
+.form {
+  grid-column: 3 / -1;
+  height: 90vh;
+}
