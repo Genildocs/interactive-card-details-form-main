@@ -1,0 +1,125 @@
+.cards{
+    background-image: url(../images/bg-main-desktop.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;     
+    /* position: relative;  */  
+    
+    @media (max-width:500px){
+        background-image: url(../images/bg-main-mobile.png);
+        width: 100%;
+        height: 100%;
+        
+    }
+}
+
+.card-front{
+    height: 24.5rem;      
+    background-image: url(../images/bg-card-front.png);
+    background-repeat: no-repeat;  
+    background-size: contain; 
+    /* position: absolute;
+    top: 30%;
+    left: 25%;    
+    width: 100%; */
+    transform: translate(30%, 70%);
+    padding: 2.6rem 4rem 2.6rem 3.2rem;
+
+    @media(max-width:500px){
+        position: relative;
+        z-index: 20;
+        transform: translate(5%, 75%);
+        height: 16rem;
+    }
+
+    &__img{
+
+        @media(max-width:500px){
+            width: 5.4rem;
+            height: 3rem;
+        }
+
+        img{
+            
+            @media(max-width:500px){
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    &__info{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);        
+        row-gap: 2.5rem;        
+        height: 100%;
+    }
+
+    &__name{
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 1.8rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #FFFFFF;
+
+        @media (max-width:500px){
+            font-size: 0.9rem;
+            line-height: 1.1rem;
+            letter-spacing: 1.2px;
+        }
+    }
+
+    &__validity{
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 1.8rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        text-align: end;
+
+        @media (max-width:500px){
+            font-size: 0.9rem;
+            line-height: 1.1rem;
+            letter-spacing: 1.2px;
+            text-align: start;
+        }
+    }
+}
+
+.card-back{
+    background-image: url(../images/bg-card-back.png);
+    background-repeat: no-repeat;  
+    background-size: contain; 
+    height: 24.5rem; 
+    transform: translate(50%, 80%);
+    position: relative;
+
+    @media(max-width: 500px){
+        height: 16rem;        
+        transform: translate(35%, -80%);     
+    }
+    
+    p{
+        position: absolute;
+        top: 48%;
+        right: 15%;
+
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 1.8rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #FFFFFF;
+
+        @media(max-width: 500px){            
+            font-size: 0.9rem;
+            font-weight: 500;
+            line-height: 1.1rem;
+            letter-spacing: 1.2px;
+            top: 45%;
+            right: 50%;
+            
+        }
+    }
+}

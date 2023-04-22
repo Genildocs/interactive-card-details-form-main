@@ -3,8 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
-
     <link
       rel="icon"
       type="image/png"
@@ -16,71 +14,35 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap"
       rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./css/style.css" />
+    />    
+    <link rel="stylesheet" href="./css/style.css">
     <title>Frontend Mentor | Interactive card details form</title>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   </head>
-
   <body>
-    <div class="container">
-      <section class="section-card">
-        <!-- USAR BACKGROUND IMAGE COM AS IMG DOS CARD NESSAS DIV E ALINHA-LAS NORMALMENTE COM MARGIN -->
-        <div class="card-one">
-          <img src="./images/card-logo.svg" alt="blank circle" class="card-one__image"/>
-          <p class="card-one__paragraph">0000 0000 0000 0000</p>
-          <div class="card-data">
-            <p class="card-data__paragraph-one">Jane Appleseed</p>
-            <p class="card-data__paragraph-two">00/00</p>
+    <main class="container">
+      <section class="cards">
+          <div class="card-front">            
+            <div class="card-front__img">
+              <img src="./images/card-logo.svg" alt="logo card">
+            </div>
+
+            <div class="card-front__info">
+              <h2 class="heading-2">0000 0000 0000 0000</h2>
+              <p class="card-front__name">JANE APPLESEED</p>
+              <p class="card-front__validity">00/00</p>
+            </div>
           </div>
-        </div>
-        <div class="card-two">                
-          <p class="card-two__paragraph">000</p>
-        </div>
+
+          <div class="card-back">
+            <p>000</p>
+          </div>
       </section>
 
-      <div class="form">
-        <section class="section-form">
-          <form action="">
-            <label for="card-name" class="section-from__label-name">Cardholder Name</label>
-            <input
-              type="text"
-              placeholder="e.g. Jane Appleseed"
-              id="card-name"
-              class="section-form__input-name"
-            />
-            <label for="card-number" class="section-form__label-number">Card Number</label>
-            <input
-              type="text"
-              placeholder="e.g. 1234 5678 9123 0000"
-              id="card-number"
-              class="section-form__input-number"
-            />
-            <label for="card-month" class="section-form__label-month">Exp. Date (MM/YY)</label>
-            <input type="number" placeholder="MM" id="card-month" class="section-form__input-month"/>
-            <input type="number" placeholder="YY" id="card-years" class="section-form__input-years"/>
-            <label for="card-cvc" class="section-form__label-cvc">CVC</label>
-            <input type="text" placeholder="e.g. 123" id="card-cvc" class="section-form__input-cvc"/>
-            <button class="btn">Confirm</button>
-          </form>
-        </section>
-        <section class="section-three">
-          <img src="./images/icon-complete.svg" alt="" />
-          <p><strong>Thank you!</strong></p>
-          <p>We've added your card details</p>
-          <button>Continue</button>
-        </section>
-      </div>
+      <section class="form">
+        FORM
+      </section>
+    </main>
 
-      <!-- Completed state start -->
-
-      <footer class="footer">
-        Challenge by
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-          >Frontend Mentor</a
-        >. Coded by <a href="#">Genildocs</a>.
-      </footer>
-    </div>
+    <script src="./js/script.js"></script>
   </body>
 </html>
