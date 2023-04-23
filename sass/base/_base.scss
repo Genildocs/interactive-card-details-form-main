@@ -14,13 +14,14 @@ html{
 
 body{
     min-height: 100vh;
-    font-family: 'Space Grotesk', sans-serif;
-    overflow: hidden;
+    font-family: 'Space Grotesk', sans-serif;    
 }
 
 .container{
     display: flex ;
     flex-wrap: wrap;
+    align-items: center;
+    gap: 35rem;
 }
 
 //Breakpoints bootstrap 

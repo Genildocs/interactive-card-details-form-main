@@ -1,0 +1,49 @@
+@use "../components/mixins";
+
+
+#input-name{
+    @include mixins.grid-column;
+}
+
+#input-number{
+    @include mixins.grid-column;
+}
+
+
+
+
+.form{
+    display: grid;
+    grid-template-columns: repeat(2,minmax(min-content, 19.1rem));
+    
+
+    &__name{
+        @include mixins.grid-column;
+    }
+
+    &__number{
+        @include mixins.grid-column;
+    }
+
+    &__date{
+        grid-column: 1 / 2;
+    }
+
+    &__cvc{
+        grid-column: 2 / -1;
+        grid-row: 5 / 6;
+    }
+}
+
+.inputs{
+    grid-column: 1 / 2;
+    display: flex;
+}
+
+.btn{
+    @include mixins.grid-column;
+}
+
+.complete{
+    display: none;
+}

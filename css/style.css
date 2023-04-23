@@ -14,12 +14,13 @@ html {
 body {
   min-height: 100vh;
   font-family: "Space Grotesk", sans-serif;
-  overflow: hidden;
 }
 
 .container {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  gap: 35rem;
 }
 
 /* 	<576px
@@ -57,8 +58,11 @@ body {
   .card-front {
     position: relative;
     z-index: 20;
+    padding: 1.7rem 2.7rem 2rem 2rem;
     transform: translate(5%, 75%);
     height: 16rem;
+    width: 100%;
+    max-width: 30rem;
   }
 }
 @media (max-width: 500px) {
@@ -108,7 +112,7 @@ body {
     font-size: 0.9rem;
     line-height: 1.1rem;
     letter-spacing: 1.2px;
-    text-align: start;
+    margin-right: 1.5rem;
   }
 }
 
@@ -123,6 +127,8 @@ body {
 @media (max-width: 500px) {
   .card-back {
     height: 16rem;
+    width: 100%;
+    max-width: 30rem;
     transform: translate(35%, -80%);
   }
 }
@@ -163,6 +169,45 @@ body {
     line-height: 2.3rem;
     letter-spacing: 2.2px;
   }
+}
+
+#input-name {
+  grid-column: 1/-1;
+}
+
+#input-number {
+  grid-column: 1/-1;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(min-content, 19.1rem));
+}
+.form__name {
+  grid-column: 1/-1;
+}
+.form__number {
+  grid-column: 1/-1;
+}
+.form__date {
+  grid-column: 1/2;
+}
+.form__cvc {
+  grid-column: 2/-1;
+  grid-row: 5/6;
+}
+
+.inputs {
+  grid-column: 1/2;
+  display: flex;
+}
+
+.btn {
+  grid-column: 1/-1;
+}
+
+.complete {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */

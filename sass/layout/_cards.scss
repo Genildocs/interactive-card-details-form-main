@@ -2,8 +2,7 @@
     background-image: url(../images/bg-main-desktop.png);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh; 
-       
+    height: 100vh;   
     /* position: relative;  */  
     
     @media (max-width:500px){        
@@ -27,8 +26,11 @@
     @media(max-width:500px){
         position: relative;
         z-index: 20;
+        padding: 1.7rem 2.7rem 2rem 2rem;
         transform: translate(5%, 75%);
         height: 16rem;
+        width: 100%;
+        max-width: 30rem;  
     }
 
     &__img{
@@ -80,8 +82,8 @@
         @media (max-width:500px){
             font-size: 0.9rem;
             line-height: 1.1rem;
-            letter-spacing: 1.2px;
-            text-align: start;
+            letter-spacing: 1.2px;  
+            margin-right: 1.5rem;          
         }
     }
 }
@@ -95,7 +97,9 @@
     position: relative;
 
     @media(max-width: 500px){
-        height: 16rem;        
+        height: 16rem;
+        width: 100%;
+        max-width: 30rem;        
         transform: translate(35%, -80%);     
     }
     
