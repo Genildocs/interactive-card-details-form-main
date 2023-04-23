@@ -1,49 +1,83 @@
 @use "../components/mixins";
 
+#input-name,
+#input-number,
+#input-date-1,
+#input-date-2,
+#input-cvc {
+    @include mixins.input-display;
 
-#input-name{
-    @include mixins.grid-column;
 }
 
-#input-number{
-    @include mixins.grid-column;
+#input-date-1,
+#input-date-2{
+    margin-right: 1.2rem;
 }
 
-
-
-
-.form{
+.form {
     display: grid;
-    grid-template-columns: repeat(2,minmax(min-content, 19.1rem));
-    
+    grid-template-columns: repeat(2, minmax(0, 19rem));
+    row-gap: 2.6rem;
+    justify-content: flex-end;
 
-    &__name{
+    &__name {
         @include mixins.grid-column;
     }
 
-    &__number{
+    &__number {
         @include mixins.grid-column;
     }
 
-    &__date{
+    &__date {
         grid-column: 1 / 2;
     }
 
-    &__cvc{
+    &__cvc {
         grid-column: 2 / -1;
-        grid-row: 5 / 6;
+        grid-row: 3 / 4;
+    }
+
+    &__label {
+        font-weight: 500;
+        font-size: 1.2rem;
+        line-height: 1.5rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #0c2f09;
     }
 }
 
-.inputs{
+.inputs {
     grid-column: 1 / 2;
     display: flex;
 }
 
-.btn{
+.btn {
     @include mixins.grid-column;
 }
 
-.complete{
+.complete {
     display: none;
+}
+
+.btn{
+    padding: 1.5rem 15.7rem;
+    border: none;
+    border-radius: 0.8rem;
+    background-color:#21092F;
+    cursor: pointer;
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 2.3rem;
+    font-family: inherit;
+    transition: all 0.3s;
+
+    &:hover{
+        opacity: 0.9;
+    }
+
+    &:active{
+        opacity: 1;
+    }
 }

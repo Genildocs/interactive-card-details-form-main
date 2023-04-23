@@ -1,65 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./images/favicon-32x32.png"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap"
-      rel="stylesheet"
-    />    
-    <link rel="stylesheet" href="./css/style.css">
-    <title>Frontend Mentor | Interactive card details form</title>
-  </head>
-  <body>
-    <main class="container">
-      <section class="cards">
-          <div class="card-front">            
-            <div class="card-front__img">
-              <img src="./images/card-logo.svg" alt="logo card">
-            </div>
 
-            <div class="card-front__info">
-              <h2 class="heading-2">0000 0000 0000 0000</h2>
-              <p class="card-front__name">JANE APPLESEED</p>
-              <p class="card-front__validity">00/00</p>
-            </div>
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Frontend Mentor | Interactive card details form</title>
+</head>
 
-          <div class="card-back">
-            <p>000</p>
-          </div>
-      </section>
+<body>
+  <main class="container">
+    <section class="cards">
+      <div class="card-front">
+        <div class="card-front__img">
+          <img src="./images/card-logo.svg" alt="logo card">
+        </div>
 
-      <section class="form">        
-        <label for="input-name">Cardholder Name</label>
-        <input type="text" id="input-name" placeholder="e.g Jane Appleseed">
-        <label for="input-number" class="form__number">card number</label>
-        <input type="text" id="input-number" placeholder="e.g. 1234 5678 9123 0000">
-        <label for="input-date-1" class="form__date">Exp. Date (MM/YY)</label>
+        <div class="card-front__info">
+          <h2 class="heading-2">0000 0000 0000 0000</h2>
+          <p class="card-front__name">JANE APPLESEED</p>
+          <p class="card-front__validity">00/00</p>
+        </div>
+      </div>
+
+      <div class="card-back">
+        <p>000</p>
+      </div>
+    </section>
+
+    <form action="#" method="get" class="form">
+      <div class="form__name">
+        <label for="input-name" class="form__label">Cardholder Name</label>
+        <input type="text" id="input-name" placeholder="e.g Jane Appleseed" name="card-name">
+      </div>
+      <div class="form__number">
+        <label for="input-number" class="form__label">card number</label>
+        <input type="text" id="input-number" placeholder="e.g. 1234 5678 9123 0000" name="card-number">
+      </div>
+      <div class="form__date">
+        <label for="input-date-1" class="form__label">Exp. Date (MM/YY)</label>
         <div class="inputs">
-          <input type="text" id="input-date-1" placeholder="MM"><input type="number" id="input-date-2" placeholder="YY">
-        </div>        
-        <label for="input-cvc" class="form__cvc">cvc</label>
-        <input type="text" placeholder="e.g. 123" id="input-cvc">
-        <button class="btn">Confirm</button>
-      </section>
-      <section class="complete">
-        <img src="./images/icon-complete.svg" alt="" class="complete__img">
-        <h2 class="complete__thank">thank you!</h2>
-        <p class="complete__text">We’ve added your card details</p>
-        <button class="btn">Continue</button>
-      </section>
+          <input type="text" id="input-date-1" placeholder="MM" name="card-month"><input type="text" id="input-date-2" placeholder="YY" name="card-year">
+        </div>
+      </div>
+      <div class="form__cvc">
+        <label for="input-cvc" class="form__label">cvc</label>
+        <input type="text" placeholder="e.g. 123" id="input-cvc" name="card-cvc">
+      </div>
+      <button class="btn">Confirm</button>
+    </form>
+    <section class="complete">
+      <img src="./images/icon-complete.svg" alt="" class="complete__img">
+      <h2 class="complete__thank">thank you!</h2>
+      <p class="complete__text">We’ve added your card details</p>
+      <button class="btn" type="submit">Continue</button>
+    </section>
 
-    </main>
+  </main>
 
-    <script src="./js/script.js"></script>
-  </body>
+  <script src="./js/script.js"></script>
+</body>
+
 </html>
