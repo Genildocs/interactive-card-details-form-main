@@ -32,12 +32,22 @@ body {
     ≥992px
     ≥1200px
     ≥1400px*/
+@keyframes movecardFront {
+  0% {
+    margin-left: -100px;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .cards {
   background-image: url(../images/bg-main-desktop.png);
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
   /* position: relative;  */
+  flex-basis: 25%;
 }
 @media (max-width: 500px) {
   .cards {
@@ -57,6 +67,8 @@ body {
   width: 100%; */
   transform: translate(30%, 70%);
   padding: 2.6rem 4rem 2.6rem 3.2rem;
+  animation-name: movecardFront;
+  animation-duration: 2s;
 }
 @media (max-width: 500px) {
   .card-front {
@@ -259,6 +271,11 @@ body {
 }
 .btn:active {
   opacity: 1;
+}
+
+.error {
+  margin-top: 2rem;
+  color: red;
 }
 
 /*# sourceMappingURL=style.css.map */

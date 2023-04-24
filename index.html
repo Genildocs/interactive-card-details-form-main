@@ -32,14 +32,14 @@
       </div>
     </section>
 
-    <form action="#" method="get" class="form">
-      <div class="form__name">
+    <form action="#" method="get" class="form" >
+      <div class="form__name" >        
         <label for="input-name" class="form__label">Cardholder Name</label>
-        <input type="text" id="input-name" placeholder="e.g Jane Appleseed" name="card-name">
+        <input type="text" id="input-name" placeholder="e.g Jane Appleseed" name="card-name" required >
       </div>
       <div class="form__number">
         <label for="input-number" class="form__label">card number</label>
-        <input type="text" id="input-number" placeholder="e.g. 1234 5678 9123 0000" name="card-number">
+        <input type="text" id="input-number" placeholder="e.g. 1234 5678 9123 0000" name="card-number" required minlength="16" maxlength="16">
       </div>
       <div class="form__date">
         <label for="input-date-1" class="form__label">Exp. Date (MM/YY)</label>
@@ -50,8 +50,9 @@
       <div class="form__cvc">
         <label for="input-cvc" class="form__label">cvc</label>
         <input type="text" placeholder="e.g. 123" id="input-cvc" name="card-cvc">
+        <span class="error" aria-live="polite"></span>
       </div>
-      <button class="btn">Confirm</button>
+      <button class="btn" type="submit">Confirm</button>
     </form>
     <section class="complete">
       <img src="./images/icon-complete.svg" alt="" class="complete__img">

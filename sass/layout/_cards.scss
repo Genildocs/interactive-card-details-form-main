@@ -1,10 +1,12 @@
+@use "../components/animations";
+
 .cards{
     background-image: url(../images/bg-main-desktop.png);
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;   
     /* position: relative;  */  
-    
+    flex-basis: 25%;    
     @media (max-width:500px){        
         width: 100%;
         height: 100%;        
@@ -22,6 +24,9 @@
     width: 100%; */
     transform: translate(30%, 70%);
     padding: 2.6rem 4rem 2.6rem 3.2rem;
+    animation-name: movecardFront;
+    animation-duration: 2s;
+    
 
     @media(max-width:500px){
         position: relative;

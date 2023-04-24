@@ -1,0 +1,10 @@
+@keyframes movecardFront{
+    0%{
+        margin-left: -100px;
+        opacity: 0;
+    }
+
+    100%{   
+        opacity: 1;
+    }
+}
