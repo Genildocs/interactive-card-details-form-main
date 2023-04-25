@@ -10,9 +10,14 @@
 html {
   font-size: 62.5%;
 }
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
   html {
     font-size: 50%;
+  }
+}
+@media (max-width: 1050px) {
+  html {
+    font-size: 45%;
   }
 }
 
@@ -22,9 +27,17 @@ body {
 }
 
 .container {
-  display: flex;
+  /* display: flex ;
   align-items: center;
-  gap: 35rem;
+  gap: 35rem; */
+  display: grid;
+  grid-template-columns: minmax(min-content, 48.5rem) 1fr;
+}
+@media (max-width: 576px) {
+  .container {
+    height: 100vh;
+    grid-template-columns: 1fr;
+  }
 }
 
 /* 	<576px
@@ -34,11 +47,11 @@ body {
     ≥1400px*/
 @keyframes movecardFront {
   0% {
-    margin-left: -100px;
     opacity: 0;
   }
   100% {
     opacity: 1;
+    margin-left: 0;
   }
 }
 .cards {
@@ -47,9 +60,8 @@ body {
   background-size: cover;
   height: 100vh;
   /* position: relative;  */
-  flex-basis: 25%;
 }
-@media (max-width: 500px) {
+@media (max-width: 576px) {
   .cards {
     width: 100%;
     height: 100%;
@@ -67,10 +79,8 @@ body {
   width: 100%; */
   transform: translate(30%, 70%);
   padding: 2.6rem 4rem 2.6rem 3.2rem;
-  animation-name: movecardFront;
-  animation-duration: 2s;
 }
-@media (max-width: 500px) {
+@media (max-width: 576px) {
   .card-front {
     position: relative;
     z-index: 20;
@@ -81,13 +91,13 @@ body {
     max-width: 30rem;
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 576px) {
   .card-front__img {
     width: 5.4rem;
     height: 3rem;
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 576px) {
   .card-front__img img {
     width: 100%;
     height: 100%;
@@ -107,7 +117,7 @@ body {
   text-transform: uppercase;
   color: #FFFFFF;
 }
-@media (max-width: 500px) {
+@media (max-width: 576px) {
   .card-front__name {
     font-size: 0.9rem;
     line-height: 1.1rem;
@@ -121,9 +131,9 @@ body {
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #FFFFFF;
-  text-align: end;
+  margin-left: 11rem;
 }
-@media (max-width: 500px) {
+@media (max-width: 576px) {
   .card-front__validity {
     font-size: 0.9rem;
     line-height: 1.1rem;
@@ -140,7 +150,7 @@ body {
   transform: translate(50%, 80%);
   position: relative;
 }
-@media (max-width: 500px) {
+@media (max-width: 576px) {
   .card-back {
     height: 16rem;
     width: 100%;
@@ -151,7 +161,7 @@ body {
 .card-back p {
   position: absolute;
   top: 48%;
-  right: 15%;
+  right: 20%;
   font-size: 1.4rem;
   font-weight: 500;
   line-height: 1.8rem;
@@ -159,7 +169,7 @@ body {
   text-transform: uppercase;
   color: #FFFFFF;
 }
-@media (max-width: 500px) {
+@media (max-width: 576px) {
   .card-back p {
     font-size: 0.9rem;
     font-weight: 500;
@@ -179,7 +189,7 @@ body {
   font-weight: 500;
   align-self: end;
 }
-@media (max-width: 500px) {
+@media (max-width: 576px) {
   .heading-2 {
     font-size: 1.8rem;
     line-height: 2.3rem;
@@ -216,7 +226,8 @@ body {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 19rem));
   row-gap: 2.6rem;
-  justify-content: flex-end;
+  align-self: center;
+  justify-content: center;
 }
 .form__name {
   grid-column: 1/-1;

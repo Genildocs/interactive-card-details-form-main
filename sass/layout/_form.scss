@@ -18,7 +18,8 @@
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 19rem));
     row-gap: 2.6rem;
-    justify-content: flex-end;
+    align-self: center;
+    justify-content: center;
 
     &__name {
         @include mixins.grid-column;

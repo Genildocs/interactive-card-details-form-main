@@ -11,8 +11,12 @@
 html{
     font-size: 62.5%;
 
-    @media(max-width:1200px){
+    @media(max-width:1400px){
         font-size: 50%;
+    }
+
+    @media(max-width:1050px){
+        font-size: 45%;
     }
 }
 
@@ -22,9 +26,17 @@ body{
 }
 
 .container{
-    display: flex ;
+    /* display: flex ;
     align-items: center;
-    gap: 35rem;
+    gap: 35rem; */
+    display: grid;
+    grid-template-columns: minmax(min-content, 48.5rem) 1fr;
+
+    @media(max-width:576px){
+        height: 100vh;
+        grid-template-columns: 1fr;        
+
+    }
 }
 
 //Breakpoints bootstrap 
