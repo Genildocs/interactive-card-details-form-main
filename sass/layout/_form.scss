@@ -6,7 +6,12 @@
 #input-date-2,
 #input-cvc {
     @include mixins.input-display;
-
+    
+    &:focus{             
+        
+        outline: 5px solid blue;
+    }
+   
 }
 
 #input-date-1,

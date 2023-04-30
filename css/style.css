@@ -216,6 +216,13 @@ body {
   mix-blend-mode: normal;
   opacity: 0.3;
 }
+#input-name:focus,
+#input-number:focus,
+#input-date-1:focus,
+#input-date-2:focus,
+#input-cvc:focus {
+  outline: 5px solid blue;
+}
 
 #input-date-1,
 #input-date-2 {
