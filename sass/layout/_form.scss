@@ -9,8 +9,10 @@
     
     &:focus{             
         
-        outline: 5px solid blue;
+        outline: 2px solid blue;
+        
     }
+    
    
 }
 
@@ -89,6 +91,6 @@
 }
 
 .error{
-    margin-top: 2rem;
+    padding: 2px;
     color: red;
 }

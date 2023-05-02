@@ -29,10 +29,8 @@
         position: relative;
         z-index: 20;
         padding: 1.7rem 2.7rem 2rem 2rem;
-        transform: translate(5%, 75%);
-        height: 16rem;
-        width: 100%;
-        max-width: 30rem;  
+        transform: translate(5%, 75%);        
+        width: 100%;         
     }
 
     &__img{
@@ -99,10 +97,8 @@
     position: relative;
     
 
-    @media(max-width: 576px){
-        height: 16rem;
-        width: 100%;
-        max-width: 30rem;        
+    @media(max-width: 576px){        
+        width: 100%;                
         transform: translate(35%, -80%);     
     }
     

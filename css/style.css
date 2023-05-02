@@ -86,9 +86,7 @@ body {
     z-index: 20;
     padding: 1.7rem 2.7rem 2rem 2rem;
     transform: translate(5%, 75%);
-    height: 16rem;
     width: 100%;
-    max-width: 30rem;
   }
 }
 @media (max-width: 576px) {
@@ -152,9 +150,7 @@ body {
 }
 @media (max-width: 576px) {
   .card-back {
-    height: 16rem;
     width: 100%;
-    max-width: 30rem;
     transform: translate(35%, -80%);
   }
 }
@@ -221,7 +217,7 @@ body {
 #input-date-1:focus,
 #input-date-2:focus,
 #input-cvc:focus {
-  outline: 5px solid blue;
+  outline: 2px solid blue;
 }
 
 #input-date-1,
@@ -292,7 +288,7 @@ body {
 }
 
 .error {
-  margin-top: 2rem;
+  padding: 2px;
   color: red;
 }
 

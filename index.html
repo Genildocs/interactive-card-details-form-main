@@ -32,10 +32,11 @@
       </div>
     </section>
 
-    <form action="#" method="get" class="form" >
+    <form action="#" method="get" class="form" novalidate>
       <div class="form__name" >        
         <label for="input-name" class="form__label">Cardholder Name</label>
-        <input type="text" id="input-name" placeholder="e.g Jane Appleseed" name="card-name" required autofocus>
+        <input type="text" id="input-name" placeholder="e.g Jane Appleseed" name="card-name" >
+        <span class="error" aria-live="polite"></span>
       </div>
       <div class="form__number">
         <label for="input-number" class="form__label">card number</label>
@@ -49,8 +50,7 @@
       </div>
       <div class="form__cvc">
         <label for="input-cvc" class="form__label">cvc</label>
-        <input type="text" placeholder="e.g. 123" id="input-cvc" name="card-cvc">
-        <span class="error" aria-live="polite"></span>
+        <input type="text" placeholder="e.g. 123" id="input-cvc" name="card-cvc">        
       </div>
       <button class="btn" type="submit">Confirm</button>
     </form>
