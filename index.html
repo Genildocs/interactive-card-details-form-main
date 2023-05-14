@@ -35,7 +35,7 @@
     <form action="#" method="get" class="form" >
       <div class="form__name" >        
         <label for="input-name" class="form__label">Cardholder Name</label>
-        <input type="text" id="input-name" placeholder="e.g Jane Appleseed" name="card-name" required>
+        <input type="text" id="input-name" placeholder="e.g Jane Appleseed" name="card-name" >
         <span class="error" aria-live="polite"></span>
       </div>
       <div class="form__number">
@@ -46,19 +46,21 @@
       <div class="form__date">
         <label for="input-date-1" class="form__label">Exp. Date (MM/YY)</label>
         <div class="inputs">
-          <input type="text" id="input-date-1" placeholder="MM" name="card-month" required><input type="text" id="input-date-2" placeholder="YY" name="card-year" required>
+          <input type="text" id="input-date-1" placeholder="MM" name="card-month" ><input type="text" id="input-date-2" placeholder="YY" name="card-year" >
         </div>
       </div>
       <div class="form__cvc">
         <label for="input-cvc" class="form__label">cvc</label>
-        <input type="text" placeholder="e.g. 123" id="input-cvc" name="card-cvc" required>        
+        <input type="text" placeholder="e.g. 123" id="input-cvc" name="card-cvc" >        
       </div>
       <button class="btn" type="submit">Confirm</button>
     </form>
-    <section class="complete">
+    <section class="complete hidden">
       <img src="./images/icon-complete.svg" alt="" class="complete__img">
-      <h2 class="complete__thank">thank you!</h2>
-      <p class="complete__text">We’ve added your card details</p>
+      <div class="complete__div">
+        <h2 class="complete__thank">thank you!</h2>
+        <p class="complete__text">We’ve added your card details</p>
+      </div>      
       <button class="btn" type="submit">Continue</button>
     </section>
     
