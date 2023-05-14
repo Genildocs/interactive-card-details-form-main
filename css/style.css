@@ -219,6 +219,13 @@ body {
 #input-cvc:focus {
   outline: 2px solid blue;
 }
+#input-name:valid,
+#input-number:valid,
+#input-date-1:valid,
+#input-date-2:valid,
+#input-cvc:valid {
+  border: 2px solid rgb(0, 255, 98);
+}
 
 #input-date-1,
 #input-date-2 {

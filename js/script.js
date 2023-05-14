@@ -1,30 +1,29 @@
 'use strict';
 
+/* 1º Validar se o campo number só contem numeros
+   2º Validar os campos de data e cvc se foram inserido apenas numeros e a quantidade correta de numeros
+   3º Deixar o foco nos campos que não foram preenchidos corretamente ou que esteja faltando dados  */
+
 const form = document.getElementsByTagName('form')[0];
 const error = document.querySelector('.error');
 const inputName = document.getElementById('input-name');
-const cvc = document.getElementById('input-cvc');
+const inputNumber = document.getElementById('input-number');
+const dateNumber1 = document.getElementById('input-date-1');
+const dateNumber2 = document.getElementById('input-date-2');
+const cvcNumber = document.getElementById('input-cvc');
+const complete = document.querySelector('.complete');
+const btn = document.querySelector('.btn');
+console.log(complete);
 
-function validaName(){
-    const regex = /a/;
-  if (!regex.test(inputName.value)) {
-    error.textContent = "Por favor, insira somente letras.";
-    inputName.value = "";
-  }
+function validaCardNumber(){
+  const inputNumber = parseInt(inputNumber.value);
+  console.log(inputNumber);
 }
 
-/* form.addEventListener("submit", function(event){
-    if(!cvc.validity.valid){
-        error.innerHTML = "Campo obrigatorio!"
-        event.preventDefault();
-    }
-},false);
-console.log(cvc.value); */
 
 form.addEventListener("submit", function(){
-    
-    validaName();
-    
+  
+    complete.style.display = "block";
 })
 
 
