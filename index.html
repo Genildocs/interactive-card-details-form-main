@@ -40,13 +40,13 @@
       </div>
       <div class="form__number">
         <label for="input-number" class="form__label">card number</label>
-        <input type="text" id="input-number" placeholder="e.g. 1234 5678 9123 0000" name="card-number"  maxlength="16" >
+        <input type="text" id="input-number" placeholder="e.g. 1234 5678 9123 0000" name="card-number"  minlength="16" maxlength="16" >
         <span class="error" aria-live="polite"></span>
       </div>
       <div class="form__date">
         <label for="input-date-1" class="form__label">Exp. Date (MM/YY)</label>
         <div class="inputs">
-          <input type="text" id="input-date-1" placeholder="MM" name="card-month"  maxlength="2" ><input type="text" id="input-date-2" placeholder="YY" name="card-year" >
+          <input type="text" id="input-date-1" placeholder="MM" name="card-month" minlength="2" maxlength="2" ><input type="text" id="input-date-2" placeholder="YY" name="card-year" >
         </div>
       </div>
       <div class="form__cvc">
