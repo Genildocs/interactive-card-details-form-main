@@ -15,7 +15,7 @@ const overlay = document.querySelector('.overlay');
 const hidden = document.querySelector('.hidden');
 const inputName = document.getElementById('input-name');
 const complete = document.querySelector('.complete');
-const btn = document.querySelector('.btn');
+const btnComplete = document.querySelector('.btn-complete');
 
 
 const dateNumber1 = document.getElementById('input-date-1').value;
@@ -23,10 +23,10 @@ const dateNumber2 = document.getElementById('input-date-2').value;
 const cvcNumber = document.getElementById('input-cvc').value;
 
 
+/* Valida o campo input-number */
 function validaNumber(){
 
-    const inputNumber = document.getElementById('input-number').value;   
-    cardFrontNumber.textContent = inputNumber;
+    const inputNumber = document.getElementById('input-number').value;       
 
     if(isNaN(inputNumber) || inputNumber === ''){
         error.textContent = "Wrong format, numbers only"
@@ -52,3 +52,7 @@ form.addEventListener('submit', function(event){
 
 })
 
+btnComplete.addEventListener('click', function(){
+    form.classList.toggle('hidden');
+    complete.classList.toggle('hidden');
+})
