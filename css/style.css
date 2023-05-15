@@ -217,7 +217,15 @@ body {
 #input-date-1:focus,
 #input-date-2:focus,
 #input-cvc:focus {
-  outline: 2px solid blue;
+  outline: 2px solid rgb(0, 60, 255);
+}
+#input-name:invalid,
+#input-number:invalid,
+#input-date-1:invalid,
+#input-date-2:invalid,
+#input-cvc:invalid {
+  border: 2px solid red;
+  outline: none;
 }
 
 #input-date-1,
@@ -311,12 +319,12 @@ body {
 }
 
 .error {
-  padding: 2px;
-  color: red;
-}
-
-.overlay {
-  display: block;
+  display: inline-block;
+  padding-top: 1.5rem;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  color: #FF5050;
 }
 
 .hidden {

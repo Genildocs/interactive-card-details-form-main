@@ -9,10 +9,14 @@
     
     &:focus{             
         
-        outline: 2px solid blue;
+        outline: 2px solid rgb(0, 60, 255);
         
     }   
     
+    &:invalid{
+        border: 2px solid red;
+        outline: none;
+    }
    
 }
 
@@ -117,12 +121,12 @@
 }
 
 .error{
-    padding: 2px;
-    color: red;
-}
-
-.overlay{
-    display: block;
+    display: inline-block;
+    padding-top: 1.5rem;
+    font-size: 2rem;
+    font-weight: 500;
+    line-height:1.5rem;
+    color: #FF5050;
 }
 
 .hidden{

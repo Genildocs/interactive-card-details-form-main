@@ -14,26 +14,41 @@ const error = document.querySelector('.error');
 const overlay = document.querySelector('.overlay');
 const hidden = document.querySelector('.hidden');
 const inputName = document.getElementById('input-name');
-const inputNumber = document.getElementById('input-number').value;
-const dateNumber1 = document.getElementById('input-date-1').value;
-const dateNumber2 = document.getElementById('input-date-2').value;
-const cvcNumber = document.getElementById('input-cvc').value;
 const complete = document.querySelector('.complete');
 const btn = document.querySelector('.btn');
 
-console.log(isNaN(inputNumber));
 
-/* function validaNumber(){
-   if(isNaN(inputNumber)){
-      return alert('Não é um numero')
-      
-   }else{return false}
-} */
+const dateNumber1 = document.getElementById('input-date-1').value;
+const dateNumber2 = document.getElementById('input-date-2').value;
+const cvcNumber = document.getElementById('input-cvc').value;
+
+
+function validaNumber(){
+
+    const inputNumber = document.getElementById('input-number').value;   
+    cardFrontNumber.textContent = inputNumber;
+
+    if(isNaN(inputNumber) || inputNumber === ''){
+        error.textContent = "Wrong format, numbers only"
+        return false;
+    }else{
+        return true;
+    }
+}
+
+
+
 
 form.addEventListener('submit', function(event){
-   event.preventDefault();
-
-   form.submit();
+    event.preventDefault();  
+        
+    
+    if(validaNumber()){
+        form.classList.toggle('hidden');
+        complete.classList.toggle('hidden');
+    }    
+    
+    
 
 })
 
