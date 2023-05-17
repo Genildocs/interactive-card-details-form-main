@@ -55,4 +55,5 @@ form.addEventListener('submit', function(event){
 btnComplete.addEventListener('click', function(){
     form.classList.toggle('hidden');
     complete.classList.toggle('hidden');
+    document.location.reload(true);
 })
