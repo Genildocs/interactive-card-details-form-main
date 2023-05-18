@@ -28,16 +28,22 @@ function validaNumber(){
 
     const inputNumber = document.getElementById('input-number').value;       
 
-    if(isNaN(inputNumber) || inputNumber === ''){
+    if(inputNumber.length !== 16 || inputNumber === ''){
         error.textContent = "Wrong format, numbers only"
         return false;
     }else{
-        return true;
+        if(isNaN(inputNumber)){
+            error.textContent = "Wrong format, numbers only"
+            return false;
+        }else{
+            return true;
+        }
     }
+
+    
 }
 
-
-
+console.log(validaNumber());
 
 form.addEventListener('submit', function(event){
     event.preventDefault();  
@@ -55,5 +61,5 @@ form.addEventListener('submit', function(event){
 btnComplete.addEventListener('click', function(){
     form.classList.toggle('hidden');
     complete.classList.toggle('hidden');
-    document.location.reload(true);
+    document.location.reload();
 })
