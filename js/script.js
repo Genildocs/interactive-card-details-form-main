@@ -43,7 +43,7 @@ function validaNumber(){
     
 }
 
-console.log(validaNumber());
+
 
 form.addEventListener('submit', function(event){
     event.preventDefault();  
@@ -63,4 +63,3 @@ btnComplete.addEventListener('click', function(){
     complete.classList.toggle('hidden');
     document.location.reload();
 })
-  
