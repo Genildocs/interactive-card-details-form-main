@@ -1,8 +1,9 @@
 /* INPUTS FORM */
 const form = document.getElementsByTagName('form')[0];
+const inputName = document.getElementById('input-name');
 const inputNumber = document.getElementById('input-number');
 const inputCvc = document.getElementById('input-cvc');
-
+const inputDates = ['input-date-1', 'input-date-2'];
 /* INPUTS ERROS AND COMṔLETE*/
 const error = document.querySelector('.error');
 const complete = document.querySelector('.complete');
@@ -11,6 +12,20 @@ const complete = document.querySelector('.complete');
 const btn = document.querySelector('.btn');
 const btnComplete = document.querySelector('.btn-complete');
 
+/* info das img dos card */
+const cardFrontNumber = document.querySelector('.heading-2');
+const cardFrontName = document.querySelector('.card-front__name');
+
+/* Insere informações dos inputs nos card images 
+   Inserts input information into the card images.*/
+function cardImages(input,image){
+    input.addEventListener('input', function(){
+        image.textContent = input.value;
+    })
+}
+
+cardImages(inputNumber, cardFrontNumber);
+cardImages(inputName, cardFrontName);
 
 /* Verifica se os campos de input number e input cvc são validos
    Check if the input fields for 'number' and 'CVC' are valid. */
@@ -21,12 +36,12 @@ function validaInput(valor){
     }else{        
         return true;
     }
+    
 }
 
 /* Verifica se o campo input-date é valido
    Check if the input field 'input-date' is valid. */
-function validaDate(){
-    const inputDates = ['input-date-1', 'input-date-2'];
+function validaDate(){    
     let valid = true;
     for(let i = 0; i < inputDates.length; i++){
         const inputsValue = document.getElementById(inputDates[i]).value;
@@ -39,21 +54,33 @@ function validaDate(){
     return valid;
 }
 
+function validaName(){
+       
+}
+
+
+
+function showForm(){
+    form.classList.toggle('hidden');
+    complete.classList.toggle('hidden');
+}
+
+function showError(){
+    error.textContent = "Enter numbers only.";
+}
+
+
 
 
 form.addEventListener("submit", function(event){
-    event.preventDefault();
-    
+    event.preventDefault();    
+
     if(validaInput(inputNumber.value) && validaInput(inputCvc.value) && validaDate()){
-        form.classList.toggle('hidden');
-        complete.classList.toggle('hidden');
+        showForm();
     }else{
-        error.textContent = "Enter numbers only.";
+        showError();
     }
     
 })
 
-btnComplete.addEventListener('click', function(){
-    form.classList.toggle('hidden');
-    complete.classList.toggle('hidden');
-})
+btnComplete.addEventListener('click', showForm);
