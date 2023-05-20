@@ -318,8 +318,10 @@ body {
   opacity: 1;
 }
 
-.error, .error-date {
+.error {
+  text-align: center;
   display: inline-block;
+  grid-column: 1/-1;
   padding-top: 1.5rem;
   font-size: 2rem;
   font-weight: 500;
@@ -329,6 +331,10 @@ body {
 
 .hidden {
   display: none;
+}
+
+.teste {
+  background-color: #0c2f09;
 }
 
 /*# sourceMappingURL=style.css.map */

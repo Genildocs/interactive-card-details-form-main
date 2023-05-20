@@ -43,21 +43,17 @@ function validaNumber() {
 function validaDate() {
     const inputsDate = ['input-date-1', 'input-date-2'];
     const errorsDate = document.querySelector('.error-date');    
-    
+    let valid = true;
     for (let i = 0; i < inputsDate.length; i++) {
-        const datesNumber = document.getElementById(inputsDate[i]).value
-        console.log(datesNumber[i]);
-        if (isNaN(datesNumber) || datesNumber === '') {            
-            errorsDate.textContent = "Wrong format, numbers only"
-            console.log(datesNumber);
-            return false;
-        } else {
-            return true;
-        }
+        const datesNumber = document.getElementById(inputsDate[i]).value;        
+        if (isNaN(datesNumber) || datesNumber === '') {
+            errorsDate.textContent = "Wrong format, numbers only"            
+            valid = false;
+        } 
     }
-}
 
-console.log(validaDate());
+    return valid;
+}
 
 
 form.addEventListener('submit', function (event) {
@@ -75,3 +71,6 @@ btnComplete.addEventListener('click', function () {
     complete.classList.toggle('hidden');
     document.location.reload();
 })
+
+
+

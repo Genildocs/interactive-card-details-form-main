@@ -12,7 +12,7 @@
   <title>Frontend Mentor | Interactive card details form</title>
 </head>
 
-<body>
+<body >
   <main class="container">
     <section class="cards">
       <div class="card-front">
@@ -35,13 +35,11 @@
     <form action="#" method="get" class="form"  >
       <div class="form__name" >        
         <label for="input-name" class="form__label">Cardholder Name</label>
-        <input type="text" id="input-name" placeholder="e.g Jane Appleseed" name="card-name" >
-        
+        <input type="text" id="input-name" placeholder="e.g Jane Appleseed" name="card-name" >        
       </div>
       <div class="form__number">
         <label for="input-number" class="form__label">card number</label>
-        <input type="text" id="input-number" placeholder="e.g. 1234 5678 9123 0000" name="card-number" minlength="16" maxlength="16">
-        <span class="error" aria-live="polite"></span>
+        <input type="text" id="input-number" placeholder="e.g. 1234 5678 9123 0000" name="card-number" minlength="16" maxlength="16">        
       </div>
       <div class="form__date">
         <label for="input-date-1" class="form__label">Exp. Date (MM/YY)</label>
@@ -49,15 +47,17 @@
           <input type="text" id="input-date-1" placeholder="MM" name="card-month" minlength="2" maxlength="2" >
           <input type="text" id="input-date-2" placeholder="YY" name="card-year" minlength="2" maxlength="2">          
         </div>
-        <span class="error-date" aria-live="polite"></span>
       </div>
       <div class="form__cvc">
         <label for="input-cvc" class="form__label">cvc</label>
-        <input type="text" placeholder="e.g. 123" id="input-cvc" name="card-cvc" >        
+        <input type="text" placeholder="e.g. 123" id="input-cvc" name="card-cvc" minlength="3" maxlength="3">   
       </div>
-      <button class="btn" type="submit">Confirm</button>
+      <div class="error">
+        <span aria-live="polite"></span>
+      </div>
+      <button class="btn" type="submit">Confirm</button>      
     </form>
-    <section class="complete hidden">
+       <section class="complete hidden">
       <img src="./images/icon-complete.svg" alt="" class="complete__img">
       <div class="complete__div">
         <h2 class="complete__thank">thank you!</h2>
@@ -68,7 +68,7 @@
     
   </main>
 
-  <script src="./js/script.js"></script>
+  <script src="./js/script2.js"></script>
 </body>
 
 </html>
