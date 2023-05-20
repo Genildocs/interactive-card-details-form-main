@@ -16,49 +16,61 @@ const hidden = document.querySelector('.hidden');
 const inputName = document.getElementById('input-name');
 const complete = document.querySelector('.complete');
 const btnComplete = document.querySelector('.btn-complete');
-
-
-const dateNumber1 = document.getElementById('input-date-1').value;
-const dateNumber2 = document.getElementById('input-date-2').value;
 const cvcNumber = document.getElementById('input-cvc').value;
 
 
 /* Valida o campo input-number */
-function validaNumber(){
+function validaNumber() {
 
-    const inputNumber = document.getElementById('input-number').value;       
+    const inputNumber = document.getElementById('input-number').value;
 
-    if(inputNumber.length !== 16 || inputNumber === ''){
+    if (inputNumber.length !== 16 || inputNumber === '') {
         error.textContent = "Wrong format, numbers only"
         return false;
-    }else{
-        if(isNaN(inputNumber)){
+    } else {
+        if (isNaN(inputNumber)) {
             error.textContent = "Wrong format, numbers only"
             return false;
-        }else{
+        } else {
             return true;
         }
     }
 
-    
+
 }
 
-
-
-form.addEventListener('submit', function(event){
-    event.preventDefault();  
-        
+/* Valida o campo input-date */
+function validaDate() {
+    const inputsDate = ['input-date-1', 'input-date-2'];
+    const errorsDate = document.querySelector('.error-date');    
     
-    if(validaNumber()){
+    for (let i = 0; i < inputsDate.length; i++) {
+        const datesNumber = document.getElementById(inputsDate[i]).value
+        console.log(datesNumber[i]);
+        if (isNaN(datesNumber) || datesNumber === '') {            
+            errorsDate.textContent = "Wrong format, numbers only"
+            console.log(datesNumber);
+            return false;
+        } else {
+            return true;
+        }
+    }
+}
+
+console.log(validaDate());
+
+
+form.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+
+    if (validaNumber() && validaDate()) {
         form.classList.toggle('hidden');
         complete.classList.toggle('hidden');
-    }    
-    
-    
-
+    }
 })
 
-btnComplete.addEventListener('click', function(){
+btnComplete.addEventListener('click', function () {
     form.classList.toggle('hidden');
     complete.classList.toggle('hidden');
     document.location.reload();
