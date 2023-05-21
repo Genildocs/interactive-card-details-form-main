@@ -19,6 +19,7 @@ const cardFrontName = document.querySelector('.card-front__name');
 /* Insere informações dos inputs nos card images 
    Inserts input information into the card images.*/
 function cardImages(input,image){
+    
     input.addEventListener('input', function(){
         image.textContent = input.value;
     })
@@ -55,7 +56,8 @@ function validaDate(){
 }
 
 function validaName(){
-       
+       const nameValue = inputName.value;
+       console.log(nameValue);
 }
 
 
@@ -70,10 +72,10 @@ function showError(){
 }
 
 
-
-
 form.addEventListener("submit", function(event){
     event.preventDefault();    
+    validaName();
+
 
     if(validaInput(inputNumber.value) && validaInput(inputCvc.value) && validaDate()){
         showForm();
