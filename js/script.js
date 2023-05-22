@@ -29,16 +29,15 @@ cardImages(inputName, cardFrontName); */
 
 /* Nova função */
 
-/* function inserInfo(){
-    
+function inserInfo(){
+    console.log(inputNumber.value)
     inputNumber.addEventListener('input', function(){
-        const cardFrontNumber = inputNumber.value;
-        const newArray = new Array(cardFrontNumber);
-        console.log(newArray);
+        const numberValue = inputNumber.value;
+        cardFrontNumber.textContent = numberValue.replace(/(\d{4})(?=(\d{4})+$)/g, '$1 ');
     })
 }
 
-inserInfo(); */
+inserInfo();
 
 /* Verifica se os campos de input number e input cvc são validos
    Check if the input fields for 'number' and 'CVC' are valid. */
