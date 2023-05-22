@@ -15,17 +15,30 @@ const btnComplete = document.querySelector(".btn-complete");
 /* info das img dos card */
 const cardFrontNumber = document.querySelector(".heading-2");
 const cardFrontName = document.querySelector(".card-front__name");
+const cardBackCvc = document.querySelector('.card-back__p');
 
 /* Insere informações dos inputs nos card images 
    Inserts input information into the card images.*/
-function inserInfo(){
+function numberInfo(){
   if(!inputNumber.value){
-    cardFrontNumber.textContent = '0000 0000 0000 0000'
+    cardFrontNumber.textContent = '0000 0000 0000 0000';
   }else{
     const numberValue = inputNumber.value;
     cardFrontNumber.textContent = numberValue.replace(/(\d{4})(?=(\d{4})+$)/g, '$1 ');
   }    
 }
+
+function cvcInfo(){
+  if(!inputCvc.value){
+    cardBackCvc.textContent = '000';
+  }else{
+    const cvcValue = inputCvc.value;
+    cardBackCvc.textContent = cvcValue;
+  }
+}
+
+
+
 /* Verifica se os campos de input number e input cvc são validos
    Check if the input fields for 'number' and 'CVC' are valid. */
 function validaInput(valor) {
@@ -49,11 +62,6 @@ function validaDate() {
   }
 
   return valid;
-}
-
-function validaName() {
-  const nameValue = inputName.value;
-  console.log(nameValue);
 }
 
 function showForm() {
@@ -80,5 +88,6 @@ form.addEventListener("submit", function (event) {
   }
 });
 
-inputNumber.addEventListener('input', inserInfo)
+inputCvc.addEventListener('input', cvcInfo);
+inputNumber.addEventListener('input', numberInfo);
 btnComplete.addEventListener("click", showForm);
