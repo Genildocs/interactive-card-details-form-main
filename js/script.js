@@ -18,27 +18,14 @@ const cardFrontName = document.querySelector(".card-front__name");
 
 /* Insere informações dos inputs nos card images 
    Inserts input information into the card images.*/
-/* function cardImages(input, image) {
-  input.addEventListener("input", function () {
-    image.textContent = input.value;
-  });
-}
-
-cardImages(inputNumber, cardFrontNumber);
-cardImages(inputName, cardFrontName); */
-
-/* Nova função */
-
 function inserInfo(){
-    console.log(inputNumber.value)
-    inputNumber.addEventListener('input', function(){
-        const numberValue = inputNumber.value;
-        cardFrontNumber.textContent = numberValue.replace(/(\d{4})(?=(\d{4})+$)/g, '$1 ');
-    })
+  if(!inputNumber.value){
+    cardFrontNumber.textContent = '0000 0000 0000 0000'
+  }else{
+    const numberValue = inputNumber.value;
+    cardFrontNumber.textContent = numberValue.replace(/(\d{4})(?=(\d{4})+$)/g, '$1 ');
+  }    
 }
-
-inserInfo();
-
 /* Verifica se os campos de input number e input cvc são validos
    Check if the input fields for 'number' and 'CVC' are valid. */
 function validaInput(valor) {
@@ -93,4 +80,5 @@ form.addEventListener("submit", function (event) {
   }
 });
 
+inputNumber.addEventListener('input', inserInfo)
 btnComplete.addEventListener("click", showForm);
