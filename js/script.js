@@ -3,7 +3,6 @@ const form = document.getElementsByTagName("form")[0];
 const inputName = document.getElementById("input-name");
 const inputNumber = document.getElementById("input-number");
 const inputCvc = document.getElementById("input-cvc");
-const inputDates = ["input-date-1", "input-date-2"];
 /* INPUTS ERROS AND COMṔLETE*/
 const error = document.querySelector(".error");
 const complete = document.querySelector(".complete");
@@ -19,6 +18,18 @@ const cardBackCvc = document.querySelector('.card-back__p');
 
 /* Insere informações dos inputs nos card images 
    Inserts input information into the card images.*/
+
+function formateName(value){
+  if(!value){
+    return 'Jane Appleseed';
+  }else{
+    return value;
+  }
+}
+function nameInfo(){
+  const nameValue = inputName.value;
+  cardFrontName.textContent = formateName(nameValue);
+}
 function numberInfo(){
   if(!inputNumber.value){
     cardFrontNumber.textContent = '0000 0000 0000 0000';
@@ -28,16 +39,24 @@ function numberInfo(){
   }    
 }
 
-function cvcInfo(){
-  if(!inputCvc.value){
-    cardBackCvc.textContent = '000';
+
+function formatCvc(value){
+  if(!value){
+    return '000';
   }else{
-    const cvcValue = inputCvc.value;
-    cardBackCvc.textContent = cvcValue;
+    return value;
   }
 }
+function cvcInfo(){
+   const cvcValue = inputCvc.value;
+   cardBackCvc.textContent = formatCvc(cvcValue);
+}
 
-
+function dateInfo(value){
+  const arrayDate = [];
+  arrayDate.push(value);
+  console.log(arrayDate)
+}
 
 /* Verifica se os campos de input number e input cvc são validos
    Check if the input fields for 'number' and 'CVC' are valid. */
@@ -53,6 +72,7 @@ function validaInput(valor) {
    Check if the input field 'input-date' is valid. */
 function validaDate() {
   let valid = true;
+  const inputDates = ["input-date-1", "input-date-2"];
   for (let i = 0; i < inputDates.length; i++) {
     const inputsValue = document.getElementById(inputDates[i]).value;
 
@@ -63,7 +83,7 @@ function validaDate() {
 
   return valid;
 }
-
+console.log(validaDate())
 function showForm() {
   form.classList.toggle("hidden");
   complete.classList.toggle("hidden");
@@ -75,7 +95,7 @@ function showError() {
 
 form.addEventListener("submit", function (event) {
   event.preventDefault();
-  validaName();
+
 
   if (
     validaInput(inputNumber.value) &&
@@ -88,6 +108,7 @@ form.addEventListener("submit", function (event) {
   }
 });
 
+inputName.addEventListener('input', nameInfo);
 inputCvc.addEventListener('input', cvcInfo);
 inputNumber.addEventListener('input', numberInfo);
 btnComplete.addEventListener("click", showForm);
