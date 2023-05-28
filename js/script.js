@@ -3,18 +3,22 @@ const form = document.getElementsByTagName("form")[0];
 const inputName = document.getElementById("input-name");
 const inputNumber = document.getElementById("input-number");
 const inputCvc = document.getElementById("input-cvc");
+const inputMonth = document.getElementById('input-date-1');
+const inputYear = document.getElementById('input-date-2');
+
+
 /* INPUTS ERROS AND COMṔLETE*/
 const error = document.querySelector(".error");
 const complete = document.querySelector(".complete");
 
 /* Buttons */
-const btn = document.querySelector(".btn");
 const btnComplete = document.querySelector(".btn-complete");
 
 /* info das img dos card */
 const cardFrontNumber = document.querySelector(".heading-2");
 const cardFrontName = document.querySelector(".card-front__name");
 const cardBackCvc = document.querySelector('.card-back__p');
+const cardFrontDate = document.querySelector('.card-front__validity');
 
 /* Insere informações dos inputs nos card images 
    Inserts input information into the card images.*/
@@ -30,13 +34,17 @@ function nameInfo(){
   const nameValue = inputName.value;
   cardFrontName.textContent = formateName(nameValue);
 }
-function numberInfo(){
-  if(!inputNumber.value){
-    cardFrontNumber.textContent = '0000 0000 0000 0000';
+
+function formateNumber(value){
+  if (!value){
+    return '0000 0000 0000 0000';
   }else{
+    return value.replace(/(\d{4})(?=(\d{4})+$)/g, '$1 ')
+  }
+}
+function numberInfo(){
     const numberValue = inputNumber.value;
-    cardFrontNumber.textContent = numberValue.replace(/(\d{4})(?=(\d{4})+$)/g, '$1 ');
-  }    
+    cardFrontNumber.textContent = formateNumber(numberValue);
 }
 
 
@@ -51,64 +59,49 @@ function cvcInfo(){
    const cvcValue = inputCvc.value;
    cardBackCvc.textContent = formatCvc(cvcValue);
 }
-
-function dateInfo(value){
+function dateInfo(){
   const arrayDate = [];
-  arrayDate.push(value);
-  console.log(arrayDate)
+  arrayDate.push(inputMonth.value, inputYear.value);
+  const [month, years] = arrayDate;
+  const formatDate = [month, '/', years];
+  cardFrontDate.textContent = formatDate.join('');
 }
 
-/* Verifica se os campos de input number e input cvc são validos
-   Check if the input fields for 'number' and 'CVC' are valid. */
-function validaInput(valor) {
-  if (isNaN(valor) || valor === "") {
-    return false;
-  } else {
-    return true;
-  }
-}
+/* Verifica se os campos de input são validos
+   Check if the input fields are valid. */
+const validaInput = (value) => (!(isNaN(value) || value === ""));
 
-/* Verifica se o campo input-date é valido
-   Check if the input field 'input-date' is valid. */
-function validaDate() {
-  let valid = true;
-  const inputDates = ["input-date-1", "input-date-2"];
-  for (let i = 0; i < inputDates.length; i++) {
-    const inputsValue = document.getElementById(inputDates[i]).value;
-
-    if (isNaN(inputsValue) || inputsValue === "") {
-      valid = false;
-    }
-  }
-
-  return valid;
-}
-console.log(validaDate())
+/***********************************************/
 function showForm() {
   form.classList.toggle("hidden");
   complete.classList.toggle("hidden");
 }
 
-function showError() {
-  error.textContent = "Enter numbers only.";
-}
+const showError = () => error.textContent = "Enter numbers only.";
 
+/*Event submit*/
 form.addEventListener("submit", function (event) {
   event.preventDefault();
-
-
-  if (
-    validaInput(inputNumber.value) &&
-    validaInput(inputCvc.value) &&
-    validaDate()
-  ) {
+  const isInputValid = validaInput(inputNumber.value) &&
+                       validaInput(inputCvc.value) &&
+                       validaInput(inputMonth.value) &&
+                       validaInput(inputYear.value)
+  if (isInputValid) {
     showForm();
   } else {
     showError();
   }
 });
 
+
+inputMonth.addEventListener('input', dateInfo);
+inputYear.addEventListener('input', dateInfo);
 inputName.addEventListener('input', nameInfo);
 inputCvc.addEventListener('input', cvcInfo);
 inputNumber.addEventListener('input', numberInfo);
-btnComplete.addEventListener("click", showForm);
+btnComplete.addEventListener("click", function (){
+  showForm();
+  window.location.reload();
+});
+
+
