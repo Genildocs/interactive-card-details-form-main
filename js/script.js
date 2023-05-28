@@ -59,6 +59,14 @@ function cvcInfo(){
    const cvcValue = inputCvc.value;
    cardBackCvc.textContent = formatCvc(cvcValue);
 }
+
+function formateDate(value){
+  if (!value){
+   return '00/00';
+  }else{
+  return value;
+  }
+}
 function dateInfo(){
   const arrayDate = [];
   arrayDate.push(inputMonth.value, inputYear.value);
