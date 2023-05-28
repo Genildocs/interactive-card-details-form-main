@@ -37,6 +37,7 @@ body {
   .container {
     height: 100vh;
     grid-template-columns: minmax(37.5rem, 1fr);
+    grid-template-rows: 25rem;
   }
 }
 
@@ -172,7 +173,7 @@ body {
     line-height: 1.1rem;
     letter-spacing: 1.2px;
     top: 45%;
-    right: 50%;
+    right: 0;
   }
 }
 
@@ -187,9 +188,9 @@ body {
 }
 @media (max-width: 576px) {
   .heading-2 {
-    font-size: 1.8rem;
     line-height: 2.3rem;
     letter-spacing: 2.2px;
+    justify-self: center;
   }
 }
 
