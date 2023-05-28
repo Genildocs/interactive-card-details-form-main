@@ -29,7 +29,7 @@
         position: relative;
         z-index: 20;
         padding: 1.7rem 2.7rem 2rem 2rem;
-        transform: translate(5%, 75%);        
+        transform: translate(5%, 72%);
         width: 75%;
     }
 
@@ -63,10 +63,15 @@
         text-transform: uppercase;
         color: #FFFFFF;
 
+
         @media (max-width:576px){
-            font-size: 0.9rem;
             line-height: 1.1rem;
             letter-spacing: 1.2px;
+            margin-left: 1.5rem;
+        }
+
+        @media (max-width: 375px) {
+            margin-left: 0.5rem;
         }
     }
 
@@ -80,10 +85,9 @@
         margin-left: 11rem;
 
         @media (max-width:576px){
-            font-size: 0.9rem;
             line-height: 1.1rem;
             letter-spacing: 1.2px;  
-            margin-right: 1.5rem;          
+            justify-self: center;
         }
     }
 }
@@ -114,13 +118,11 @@
         text-transform: uppercase;
         color: #FFFFFF;
 
-        @media(max-width: 576px){            
-            font-size: 0.9rem;
+        @media(max-width: 576px){    ;
             font-weight: 500;
             line-height: 1.1rem;
             letter-spacing: 1.2px;
             top: 45%;
-            right: 0;
             
         }
     }
